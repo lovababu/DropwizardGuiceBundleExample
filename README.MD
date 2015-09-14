@@ -9,21 +9,21 @@
   
 ### How to import.?
   1. Eclipse:
-     Run the below gradle task, it creates eclipse project specific files .eclipse and .project, so you are good to import.   
+     Run the below gradle task, it creates eclipse project specific files .eclipse and .project, so you are good to import.     
      
-     ```>gradle eclipse```  
+     ```>gradle eclipse```    
      
   2. Intellij IDEA.  
      Directly clone from github and import gradle settings.  
      
 ### How to run?  
-  1. Dropwizard application has boot strapping class called Application.  
+  1. Dropwizard application has boot strapping class called Application.    
        
-     ```TweetService.java```  
+     ``` TweetService.java ```    
      
      in my case. Open and run as java main class and set the below program argument. 
       
-     ```check/server <tweet.yml file location>```  
+     ``` check/server <tweet.yml file location> ```  
      
      check : verifies the yml file format.  
      server : to start the server with provided configuration.  
@@ -31,10 +31,10 @@
      Request URL: http://<HostName>:<Port>/tweet  
      Request Body:    
      
-       ```{    
+     ```{    
             "message": "Hello dropwizard..",    
             "date": "2015-09-11 19:58:00"    
-          }```              
+        }```              
      
 ### How to run test cases?
    1. You can directly run below gradle task to run the tests.    
