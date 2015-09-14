@@ -1,4 +1,5 @@
 ### Dropwizard integrate with Guice extension.
+ Guide you.
   1. How to use Dropwizard extension of Guice (https://github.com/HubSpot/dropwizard-guice).  
   2. How to integrate H2 embedded database with dropwizard application.
   3. How to implement client using dropwizard-client.
