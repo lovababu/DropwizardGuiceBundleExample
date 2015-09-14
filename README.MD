@@ -16,24 +16,25 @@
   2. Intellij IDEA.  
      Directly clone from github and import gradle settings.  
      
-### How to run?
-  1. Dropwizard application has boot strapping class called Application.  
+### How to run?  
+
+  1. Dropwizard application has boot strapping class called Application.    
      ```TweetService.java```  
      in my case. Open and run as java main class and set the below program argument.  
      ```check/server <tweet.yml file location>```  
      check : verifies the yml file format.  
      server : to start the server with provided configuration.  
      And use Chrome post man or any other rest client to test it.  
-     Request URL: http://<HostName>:<Port>/tweet
-     Request Body:  
-       ```{  
-            "message": "Hello dropwizard..",  
-            "date": "2015-09-11 19:58:00"  
-          }```  
+     Request URL: http://<HostName>:<Port>/tweet  
+     Request Body:    
+       ```{    
+            "message": "Hello dropwizard..",    
+            "date": "2015-09-11 19:58:00"    
+          }```    
      
 ### How to run test cases?
-   1. You can directly run below gradle task to run the tests.  
+   1. You can directly run below gradle task to run the tests.    
       ```>gradle test```  
-   2. Open ```TweetE2ETest.java``` in your IDE and run as JUnit test by highlighting the particular method or all.
+   2. Open ```TweetE2ETest.java``` in your IDE and run as JUnit test by highlighting the particular method or all.  
    
    
