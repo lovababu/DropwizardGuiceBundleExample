@@ -1,0 +1,75 @@
+#Tweet App Configuration. Refer TweetConfiguration.java
+contextPath: /tweet
+dbConfig:
+  driverClass: org.h2.Driver
+  connURL: jdbc:h2:mem:test
+  userName: test
+  password:
+
+server:
+  type: tweetserver
+  shutdownGracePeriod: 5s
+  # The minimum number of threads to keep running to process
+  # incoming HTTP requests.
+  minThreads: 10
+
+  # The maximum number of threads to keep running to process
+  # incoming HTTP requests.
+  maxThreads: 1024
+
+  applicationConnectors:
+    - type: http
+      port: 8080
+      idleTimeout: 200s
+      # If true, allows usage of the Server header in responses.
+      useServerHeader: false
+      # If true, allows usage of the Date header in responses.
+      useDateHeader: true
+      # If true, the HTTP server will prefer X-Forwarded headers over
+      # their non-forwarded equivalents.
+      useForwardedHeaders: true
+  adminConnectors:
+    - type: http
+      port: 8081
+  requestLog:
+    timeZone: IST
+    appenders:
+      - type: console
+        threshold: ALL
+        timeZone: IST
+        target: stdout
+      - type: file
+        currentLogFilename: ./logs/requests.log
+        threshold: ALL
+        archive: true
+        archivedLogFilenamePattern: ./logs/requests-%d.log.gz
+        archivedFileCount: 5
+        timeZone: IST
+
+
+logging:
+
+  # Permit DEBUG, INFO, WARN and ERROR messages to be logged by appenders.
+  level: DEBUG
+
+  appenders:
+    # Log warnings and errors to stderr
+    - type: console
+      threshold: INFO
+      target: stderr
+
+    # Log info, warnings and errors to our apps' main log.
+    # Rolled over daily and retained for 5 days.
+    - type: file
+      threshold: INFO
+      currentLogFilename: ./logs/tweet.log
+      archivedLogFilenamePattern: ./logs/tweet-%d.log.gz
+      archivedFileCount: 5
+
+    # Log debug messages, info, warnings and errors to our apps' debug log.
+    # Rolled over hourly and retained for 6 hours
+    #- type: file
+    #  threshold: DEBUG
+    #  currentLogFilename: ./logs/tweet-debug.log
+    #  archivedLogFilenamePattern: ./logs/tweet-debug-%d{yyyy-MM-dd-hh}.log.gz
+    #  archivedFileCount: 6
